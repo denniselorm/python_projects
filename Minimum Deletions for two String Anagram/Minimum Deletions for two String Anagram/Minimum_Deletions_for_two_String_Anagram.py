@@ -1,9 +1,10 @@
 
-# Task -- return minimum number of deletions to form anagrams of two strings 
+#Task -- return minimum number of deletions to form anagrams of two strings
+#First input line --  user input stringA e.g {ghde}
+#Second input line --  user input stringB e.g {hde}
 
-#cde
-#dcf
 
+#Returns minimum no. of deletions needed to form anagrams of two strings
 def formAnagram(str1, str2):
     if len(str1) < len(str2):
         temp = str1
@@ -18,7 +19,6 @@ def formAnagram(str1, str2):
     i = 0
     mCount = 0
     while j <= len(temp1)-1:
-
         while i <= len(temp2)-1:
             if temp1[j] == temp2[i]:
                 del temp1[j]
@@ -42,18 +42,20 @@ def formAnagram(str1, str2):
     if len(temp2) != 0:
         for k in range(len(temp2)):
             temp3.append(temp2[k])
-
-    print(temp3)
     if mCount == 0:
         print("Cannot generate anagrams from the two provided strings")
     else:
         return (len(temp3))
 
+
+#Queries user for two strings
 def userInput():
     input1 = input().strip()
     input2 = input().strip()
     return input1, input2
 
+
+#Calls userInput function and returns call values to inputQueryCheck function
 def userInputCon():
     input1, input2 = userInput()
     checkBit = inputQueryCheck(input1, input2)
@@ -62,6 +64,8 @@ def userInputCon():
         checkBit = inputQueryCheck(input1, input2)
     return input1, input2
 
+
+#Checks validity of user input against constraints
 def inputQueryCheck(input1, input2):
     checkBit = 1
     if len(input1) < 1:
@@ -70,15 +74,25 @@ def inputQueryCheck(input1, input2):
         checkBit = 0
     return checkBit
 
+
+#################################################################################
+######## MAIN BLOCK OF CODE #####################################################
+
+stra, strb = userInputCon()
+print(formAnagram(stra,strb))
+      
+
+
+
+
+
+
+
+
+#################################################################################
+######### Extra Test Cases ######################################################
 #a = "cde"
 #b = "dcf"
-#a = "abcfeg" #bcfeg cfeg feg eg g af
-#b = "bce"    #bce   ce    e  e  []
-a, b = userInputCon()
-print(formAnagram(a,b))
-      
-    
-
 
 
 

@@ -1,7 +1,9 @@
 
-# Return half the total number of elements in a list
+# Sums up the occurence of each element in a list and returns half the summation of each element
 # First line -- length of list
 # Second line -- Input array values e.g {2 1 3 1 2}
+
+#Checks the frequency of an element in an array
 def matchPair(a):
     b = {}
     pairCount = 0

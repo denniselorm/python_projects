@@ -1,11 +1,11 @@
 
-# Task -- Reverse a doubly linked list
-# First input -- number of test cases e.g{1}
-# Second input -- LinkedList length n e.g{2}
-# Next n lines -- Linkedlist elements
+#Task -- Reverse a doubly linked list
+#First input -- number of test cases e.g{1}
+#Second input -- LinkedList length n e.g{2}
+#Next n lines -- Linkedlist elements
 
 
-# Linkedlist Node class
+#Linkedlist Node class
 class Node:
     def __init__(self, data=None):
         self.data = data 
@@ -13,7 +13,7 @@ class Node:
         self.prev = None
 
 
-# Doubly linkedlist class with reverse function
+#Doubly linkedlist class with reverse function
 class Dllist:
     def __init__(self, head=None):
         self.head = head
@@ -55,13 +55,13 @@ class Dllist:
             self.head = link
 
 
-# Query user for number of testcases
+#Query user for number of testcases
 def testCase():
     tcase = int(input().strip())
     return tcase
 
 
-# Queries user for linklist length and linkedlist elements for each test case
+#Queries user for linklist length and linkedlist elements for each test case
 def llInfo(tcase):
     lldict = {}
     dlist = []
@@ -80,7 +80,8 @@ def llInfo(tcase):
     return lldict
 
 
-# Calls testCase, llInfo functions and passes return values to inputCheck
+#Calls testCase, llInfo functions and passes return values to inputCheck
+#Creates node objects for each data element, inserts into position & reverses the linkedlist
 def dlInit():
     tcase = testCase()
     lldict = llInfo(tcase)
@@ -113,7 +114,7 @@ def dlInit():
     return llnameList
 
 
-# Check validity of user inputs against validity
+#Check validity of user inputs against validity
 def inputCheck(tcase, lldict):
     cbit = 1
     llvalue = list(lldict.values())

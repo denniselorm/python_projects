@@ -1,5 +1,9 @@
-#Task return number of toys that can be bought given a list of them with prices and with a budget
 
+#Task return number of toys that can be bought given a list of them with prices and a given amount to spend
+#First input line -- Total number of items and given amount to spend; space separated e.g. {5 16}
+#Second input line -- Prices of items represented by array elements; space separated e.g. {2 3 6 9 11}
+
+#Implements bubble sort function
 def sort(array1):
     j = 0
     while j <= len(array1)-2:
@@ -20,6 +24,8 @@ def sort(array1):
         j = 0
     return array1
 
+
+#Returns maximum number of toys that can be bought with a given amount
 def maxToys(array1, expen):
     array1 = sort(array1)
     price = 0
@@ -35,16 +41,22 @@ def maxToys(array1, expen):
         j += 1
     return toyCount
 
+
+#Queries user for array size and amount available to spend
 def inputParam():
     sizeTgt = input().strip().split(" ")
     sizeTgt = list(map(int,sizeTgt))
     return sizeTgt
 
+
+#Queries user for array element values (prices of items)
 def inputList():
     listCst = input().strip().split(" ")
     listCst = list(map(int,listCst))
     return listCst
 
+
+#Calls inputParam, inputList functions and returns call values to the inputCheck function
 def inputCon():
     sizeTgt = inputParam()
     listCst = inputList()
@@ -55,6 +67,8 @@ def inputCon():
         cbit = inputCheck(sizeTgt, listCst)
     return listCst,sizeTgt
 
+
+#Checks the validity of user inputs against constraints
 def inputCheck(sizeTgt, listCst):
     cbit = 1
     if len(listCst) != sizeTgt[0]:
@@ -71,10 +85,20 @@ def inputCheck(sizeTgt, listCst):
     return cbit
 
 
+####################################################################################################
+######### MAIN BLOCK OF CODE #######################################################################
+
+a,b = inputCon()
+print(maxToys(a,b[1]))
+
+
+
+
+
+########################################################################################################
+########### EXTRA TEST CASES ###########################################################################
 #a = [6,4,1,2,3,2,1]
 #print(sort(a))
 #maxToys(a,7)
 #a = [1,2,3,4]
-
-a,b = inputCon()
-print(maxToys(a,b[1]))
+########################################################################################################

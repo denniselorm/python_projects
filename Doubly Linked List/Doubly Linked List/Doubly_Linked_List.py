@@ -1,17 +1,23 @@
 
-#Task -- Doubly linked list using a single key (data)
+#Task -- Create a  Doubly linked list with a single key (data)
+
+
+#A doubly linkedlist Node
 class Node:
     def __init__(self,data=None):
         self.data = data
         self.next = None
         self.prev = None 
 
+
+#Doubly linkedlist structure with various functions
 class Dllist():
     def __init__(self,head=None):
         self.head = head
 #        self.first = None
         self.last = None
 
+#Prints data in a linkedlist structure
     def printList(self):
         link = self.head
         while link != None:
@@ -19,6 +25,7 @@ class Dllist():
             link = link.next
         print("")
 
+#Inserts a node at the beginning of a node
     def insertBegin(self, node):
         link = self.head
         if link == None:
@@ -29,6 +36,7 @@ class Dllist():
             link.prev = node
             self.head = node
 
+#Inserts a node at the end of a linkedlist
     def insertEnd(self, node):
         link = self.head
         if link == None:
@@ -39,6 +47,7 @@ class Dllist():
             link.next = node
             node.prev = link
 
+ #Inserts a node after a given node
     def insertAfterNode(self, node, data):
         link = self.head
         if link == None:
@@ -51,6 +60,7 @@ class Dllist():
         link.next = node
         node.prev = link 
 
+#Inserts a node before a given node
     def insertBeforeNode(self, node, data):
         link = self.head
         if link == None:
@@ -64,6 +74,7 @@ class Dllist():
         node.next = link
         link.prev = node
 
+ #Inserts a node between two nodes 
     def insertInNode(self, node, data, data1):
         link = self.head 
         if link == None:
@@ -79,6 +90,7 @@ class Dllist():
         node.next = link
         link.prev = node
 
+#Deletes a node at the beginning
     def deleteBegin(self):
         link = self.head
         if link == None:
@@ -86,6 +98,7 @@ class Dllist():
         else:
             self.head = link.next
 
+#Deletes a node at the end of a linkedlist
     def deleteEnd(self):
         link = self.head
         if link == None:
@@ -95,6 +108,7 @@ class Dllist():
                 link = link.next
         link.next = None
 
+#Deletes a node before a provided key
     def deleteBeforeNode(self, data):
         link = self.head 
         if link == None:
@@ -107,6 +121,8 @@ class Dllist():
             link = link.next
             prev.next = link.next
 
+
+#Deletes a node after a provided key
     def deleteAfterNode(self, data):
         link = self.head
         if link == None:
@@ -119,6 +135,7 @@ class Dllist():
             link = link.next
             prev.next = link.next
 
+#Reverses linkedlist 
     def reverseList(self):
         link = self.head
         if link == None:
@@ -135,6 +152,11 @@ class Dllist():
             link.next = prev
             self.head = link
 
+
+################################################################################################################################
+############ Main Block of Code ################################################################################################
+
+# A Series of add, insert, delete 7 reverse operations
 
 a1 = Node(10)
 dl1 = Dllist(a1)

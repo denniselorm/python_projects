@@ -1,17 +1,18 @@
 #Task -- Create a singly linked list with insert, delete & print functions
 
-## Singly linked list Node
+##Singly linked list Node
 class Node:
     def __init__(self,data=None):
         self.data = data
         self.next = None
 
 
-## Singly linked list with print & variant insert and delete functions
+##Singly linked list with print & variant insert and delete functions
 class Llist(Node):
     def __init__(self, head=None):
         self.head = head
 
+#Prints linkedlist data elements
     def printList(self):
         link = self.head
         while link != None:
@@ -19,6 +20,7 @@ class Llist(Node):
             link = link.next
         print("")
 
+#Inserts node at the beginning of the linkedlist
     def insertBegin(self, node):
         link = self.head
         if link == None:
@@ -27,6 +29,7 @@ class Llist(Node):
             node.next = link
             self.head = node
 
+#Inserts node at the end of the linkedlist
     def insertEnd(self, node):
         link = self.head
         if link == Node:
@@ -36,6 +39,7 @@ class Llist(Node):
                 link = link.next
             link.next = node
 
+#Inserts node before a given node
     def insertBeforeNode(self, node, data):
         link = self.head
         while link.data != data:
@@ -43,7 +47,8 @@ class Llist(Node):
             link = link.next
         node.next = link
         prev.next = node
-  
+
+#Inserts node after a given node  
     def insertAfterNode(self, node, data):
         link = self.head
         while link.data != data:
@@ -51,6 +56,7 @@ class Llist(Node):
         node.next = link.next
         link.next = node
 
+#Deletes node at the beginning of the linkedlist
     def deleteBegin(self):
         link = self.head
         if link == None:
@@ -58,12 +64,14 @@ class Llist(Node):
         else:
             self.head = link.next
 
+#Deletes node at the end of the linkedlist
     def deleteEnd(self):
         link = self.head
         while link.next.next != None:
             link = link.next
         link.next = None
-    
+
+#Deletes node after a given node    
     def deleteAfterNode(self,data):
         link = self.head
         prev = None
@@ -73,7 +81,8 @@ class Llist(Node):
         prev = link
         link = link.next
         prev.next = link.next
-    
+
+#Deletes node before at a given node   
     def deleteBeforeNode(self,data):
         link = self.head
         prev = None
@@ -83,7 +92,8 @@ class Llist(Node):
         prev = link
         link = link.next
         prev.next = link.next
-    
+
+#Reverses a linkedlist   
     def reverseList(self):
         link = self.head
         prev = None 

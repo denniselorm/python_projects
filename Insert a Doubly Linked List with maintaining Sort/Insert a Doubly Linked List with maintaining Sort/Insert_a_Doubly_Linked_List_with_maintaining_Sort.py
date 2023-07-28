@@ -1,16 +1,25 @@
 
+#Task -- Create an insert node function for a doubly linkedlist that inserts node in a sorted nature i.e keeps linkedlist sorted
+#First input line -- Integer value representing no. of testcases e.g. {1}
+#Second input line -- Integer value representing no. of linkedlist elements e.g. {5}
+#Next n input lines -- Values of Linkedlist elements each provided on a new line e.g. {10}\n{30}.....
+#Final input line -- Integer value to insert in linked list e.g {20}
+
+#Doubly linkedlist node; allows user to create a node object
 class Node:
     def __init__(self,data=None):
         self.data = data
         self.next = None
         self.prev = None
 
+#Class depicting linkedlist data structure
 class Dllist:
     def __init__(self, head=None):
         self.head = head
         self.last = None
         self.nodeCount = 0
-    
+ 
+#Prints linkedlist elements
     def printList(self):
         link = self.head
         while link != None:
@@ -18,6 +27,7 @@ class Dllist:
             link = link.next
         print("")
 
+#Inserts node while maintaining sorted nature of linkedlist
     def insertNodeSort(self, node):
         link = self.head
         if link.data > node.data:
@@ -33,7 +43,6 @@ class Dllist:
                     self.nodeCount += 1
                 else:
                     break
-
             if link.next != None:
                 node.next = prev.next
                 prev.next = node
@@ -50,6 +59,7 @@ class Dllist:
                 node.prev = link
                 self.nodeCount += 1
 
+#Inserts node at the end of the linkedlist
     def insertEnd(self, node):
         link = self.head
         if link == None:
@@ -63,6 +73,7 @@ class Dllist:
             node.prev = link
             self.nodeCount += 1
 
+#Sorts linked list in ascending order
     def sort(self):
         link = self.head
         while link.next != None:
@@ -102,11 +113,13 @@ class Dllist:
             if swp == 0:
                 break
             link = self.head
-                         
+
+#Queries user for number of test cases                  
 def testCase():
     tcase = int(input().strip())
     return tcase
 
+#Queries user for linkedlist length, its node elements & node element to insert
 def dlData(tcase):
     dldict = {}
     lldata = []
@@ -127,6 +140,9 @@ def dlData(tcase):
         ldlist = []
     return dldict, datalen
 
+
+#Calls testCase, dlData functions and returns call values to inputCheck function
+#Creates node for each of the user provided elements & inserts into appropriate position
 def dlinit():
     tcase = testCase()
     dldict, datalen = dlData(tcase)
@@ -156,6 +172,8 @@ def dlinit():
                         l1.insertNodeSort(objname)                
     return l1
 
+
+#Checks user input validity against constraints
 def inputCheck (tcase, dldict, datalen):
     cbit = 1
     if tcase < 1 or tcase > 10:
@@ -167,11 +185,6 @@ def inputCheck (tcase, dldict, datalen):
                 break
             tlist = llvalue[n]
             for l in range(len(tlist)):
- #               if l == 0:
- #                   n = len(llvalue)
- #                   if n < 1 or n > 1000:
- #                       cbit = 0
- #                       break
                 lldata = llvalue[n][l]
                 for j in range(len(lldata)):
                     if lldata[j] < 1 or lldata[j] > 1000:
@@ -187,9 +200,16 @@ def inputCheck (tcase, dldict, datalen):
     return cbit
 
 
+######################################################################################################
+############ MAIN BLOCK OF CODE ######################################################################
+
 l1 = dlinit()
 l1.printList()
 
+
+
+
+#Extra test cases
 '''
 a1 = Node(30)
 dl1 = Dllist(a1)

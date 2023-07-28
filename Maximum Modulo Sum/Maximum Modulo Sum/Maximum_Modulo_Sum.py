@@ -1,7 +1,13 @@
 
-#Task find the maximum sum modulo i.e sum[array] % m given array and m
+#Task find the maximum sum modulo i.e sum[array] % m given array and modulo m
 
-# 2 4 5 6
+#Returns the maximum modulos value of a sum of array elements over a range
+#Single indexes are also considered
+#First input line -- Integer value of array size, modulo integer 
+#Second input line -- Array element values
+
+
+#Returns maximum modulos value for a sum value
 def maxSumModulo(array1, modul):
     modSum = {}
     j = 0
@@ -27,10 +33,14 @@ def maxSumModulo(array1, modul):
     value = modSum.values()
     return(max(value))
 
+
+#Queries user for number of test cases
 def queryNum():
     qnum = int(input().strip())
     return qnum
 
+
+#Queries user for array size, modulo integer m, & the values of the array elements
 def queryInfo(qnum):
     input1 = []
     array1 = []
@@ -47,6 +57,8 @@ def queryInfo(qnum):
         qdict[j+1] = array2
     return qdict
 
+
+#Calls queryNum, queryInfo functions and returns call values to queryCheck
 def queryCon():
     qnum = queryNum()
     qdict = queryInfo(qnum)
@@ -57,6 +69,8 @@ def queryCon():
         checkBit = queryCheck(qnum, qdict)
     return qnum, qdict
 
+
+#Checks validity of user input against constraints
 def queryCheck(qNum, qdict):
     checkBit = 1
     for v in qdict.values():
@@ -71,11 +85,20 @@ def queryCheck(qNum, qdict):
                     checkBit = 0
     return checkBit
 
-a = [3,3,9,9,5]
-#print(maxSumModulo(a, 2))
+
+##########################################################################################################
+######### Main Block of Code #############################################################################
 
 qnum, qdict = queryCon()
-
 for v in qdict.values():
     dictv = v
     print(maxSumModulo(dictv[1], dictv[0][1]))
+
+
+
+
+
+#Extra test case
+#a = [3,3,9,9,5]
+#print(maxSumModulo(a, 2))
+## 2 4 5 6

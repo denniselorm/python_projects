@@ -1,22 +1,32 @@
 
-#Task -- Create a a linked list with n elements and insert new node at position pos
+#Task -- Create a singly linked list with n elements and insert new node at position pos
+#First input line --- Integer number representing number of linkedlist elements e.g. {3}
+#Next n input lines --- Elements for each linkedlist e.g{2\n2\n}...each input on a new line
+#Next input line --- New node element to insert e.g.{9}
+#Next input line --- Reference node position for insertion e.g. {2}, linkedlist nodes starting index is 0
+
+#Singly linkedlist node; allows user to create new node
 class Node:
     def __init__(self, data=None):
         self.data = data
         self.next = None
 
+
+#Singly linkedlist Class with function that inserts at a given pos 
 class Sllist:
     def __init__(self, head=None):
         self.head = head
         self.nodeCount = 0 
 
+#Prints linkedlist elements
     def printList(self):
         link = self.head
         while link != None:
             print(link.data, end=" ")
             link = link.next
         print("")
-    
+   
+#Inserts new node before a given node
     def insertBeforeNode(self, node, ncount):
         link = self.head
         prev = None
@@ -29,7 +39,7 @@ class Sllist:
             self.nodeCount += 1
         else:
             self.nodeCount = 0
-            while link != 0 and self.nodeCount != ncount:
+            while link !=  None and self.nodeCount != ncount:
                 prev = link
                 link = link.next
                 self.nodeCount += 1
@@ -37,6 +47,7 @@ class Sllist:
             prev.next = node
             node.next = link
 
+#Inserts new node at the end of the linkedlist
     def insertEnd(self, node):
         link = self.head
         if link == None:
@@ -49,17 +60,20 @@ class Sllist:
             link.next = node
             self.nodeCount += 1
 
+
+#Queries user for number of elements in linkedlist
 def nodeNum():
     nodenum = int(input().strip())
     return nodenum 
 
+
+#Queries user for node elements and new element to be inserted
 def nodeEle(nodenum):
     nodeele = []
     newdata = []
     for l in range(nodenum):
         usernode = int(input().strip())
         nodeele.append(usernode)
-
     usernode2 = int(input().strip())
     newdata.append(usernode2)
     usernode2 = int(input().strip())
@@ -67,6 +81,8 @@ def nodeEle(nodenum):
 
     return nodeele, newdata
 
+
+#Calls nodeNum, nodeEle functions and returns function call values to inputCheck function
 def listIni():
     nodenum = nodeNum()
     nodeele, newdata = nodeEle(nodenum)   
@@ -96,6 +112,8 @@ def listIni():
             l1.insertBeforeNode(objname, newdata[1]) 
     return l1
  
+
+#Checks validity of user input against constraints
 def inputCheck(nodenum, nodeele, newdata):
     cbit = 1
     if nodenum < 1 or nodenum > 1000:
@@ -112,6 +130,9 @@ def inputCheck(nodenum, nodeele, newdata):
             cbit = 0
     return cbit
 
+
+##########################################################################################################################
+############ MAIN BLOCK OF CODE ###########################################################################################
 
 l1 = listIni()
 l1.printList()

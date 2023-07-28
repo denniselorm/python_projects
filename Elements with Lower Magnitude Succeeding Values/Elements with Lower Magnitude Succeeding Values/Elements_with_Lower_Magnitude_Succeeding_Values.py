@@ -1,5 +1,10 @@
+#Task -- Returns number of repetitions needed such that elements have higher/equal succeeding values
+#First input line -- Integer number representing number of elements e.g. {2}
+#Second input line -- Values of elements of an array; space separated  e.g. {2 1 3 4 5}
+
 import copy 
 
+#Sorts list such that each elements succeeding value has a higher/equal value than previous one & returns no. of iterations needed to complete task
 def ttlSpan(array1):
     array2 = copy.copy(array1)
     l = 0
@@ -22,15 +27,21 @@ def ttlSpan(array1):
         l = 0
     return dcount
 
+
+#Queries user for length of input list
 def inputLen():
     llen = int(input().strip())
     return llen
 
+
+#Queries user for input list data
 def inputParam():
     var = input().strip().split(" ")
     var = list(map(int, var))
     return var
 
+
+#Calls inputLen & inputParam functions and passes return values to inputCheck function
 def inputInit():
     llen = inputLen()
     var = inputParam()
@@ -41,6 +52,7 @@ def inputInit():
         cbit = inputCheck(llen, var)
     return var
 
+#Checks validity of user input against constraints
 def inputCheck(llen, var):
     cbit = 1
     if llen < 1 or cbit > pow(10,5):
@@ -52,7 +64,16 @@ def inputCheck(llen, var):
                 break
     return cbit
 
-#a = [6,5,8,4,7,10,9]
-b = [3,6,2,7,5]
+
+########################################################################################################
+########### Main Block of Code #########################################################################
+
 c = inputInit()
 print(ttlSpan(c))
+
+
+
+##Extra test data
+#a = [6,5,8,4,7,10,9]
+#a = [6,5,8,4,7,10,9]
+#b = [3,6,2,7,5]

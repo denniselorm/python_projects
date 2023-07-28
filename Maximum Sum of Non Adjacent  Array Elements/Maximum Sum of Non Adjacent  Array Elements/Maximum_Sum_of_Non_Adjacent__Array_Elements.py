@@ -1,5 +1,8 @@
-# Task -- Find maximum sum of a subset of non adjacent elements
-# -2 -1 3 -4 5 
+#Task -- Find maximum sum of a subset of non adjacent elements
+#First input line -- Size of array e.g {2 or 5 or 6....}
+#Second input line -- Values of array elements e.g. {}
+
+#Calculates the maximum sum of non-adjacent array elements
 def maxSubSum(array1):
     l = 0
     dictsum = {}
@@ -31,15 +34,21 @@ def maxSubSum(array1):
     dictvalues = list(dictsum.values())
     return max(dictvalues)
 
+
+#Queries user for array length
 def inputLen():
     llen = int(input().strip())
     return llen
 
+
+#Queries user for array element values
 def inputParam():
     listvar = input().strip().split(" ")
     listvar = list(map(int, listvar))
     return listvar
 
+
+#Calls inputLen, inputParam functions & returns call values to inputCheck function
 def inputInit():
     llen = inputLen()
     listvar = inputParam()
@@ -50,6 +59,8 @@ def inputInit():
         cbit = inputCheck(llen, listvar)
     return listvar
 
+
+#Checks validity of user input against constraints
 def inputCheck(llen, listvar):
     cbit = 1 
     if llen < 1 or llen > pow(10,5):
@@ -62,7 +73,22 @@ def inputCheck(llen, listvar):
                     break
     return cbit
                     
-#arr = [-2,1,3,-4,5]
+
+################################################################################################################
+######### Main Block of Code ###################################################################################
 arr = inputInit()
 print(maxSubSum(arr))
 
+
+
+
+
+
+
+
+
+
+#######################################################################################################
+######### Extra Test Cases ############################################################################
+#arr = [-2,1,3,-4,5]
+#######################################################################################################

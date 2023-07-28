@@ -1,9 +1,11 @@
 
-# a=[0 1 0 0 1 0]
-#b = [0,1,0,0,1,0,0,0,0]
-#i = 5 c = 3
+#Task -- Hop between valid "0" user inputs until end of array; a hop of 1 is avoided.
+#User input consists of a list of 0's & 1's
+# Just single (i+1) and double (i+2) hops are allowed.
+#First line input -- Integer number representing length of list e.g. {6}
+#Second line input -- Values of list elements; space separated e.g {0 1 0 0 0 0}
 
-#Hop between user inputs "0 & 1"s, "0" is considered right while "1" is avoided
+#Returns number of hops between user inputs "0 & 1"s, "0" is considered right while "1" is avoided
 def hopGame(array1):
     i = 0
     hopCount = 0
@@ -27,7 +29,7 @@ def hopGame(array1):
         hopCount += 1
     return hopCount
 
-#Query user input and call user input check function (user has 5 chances to input right data after initial chance i.e 1+5)
+#Queries user input and calls user inpuCheck function (user has 5 chances to input right data after initial chance i.e 1+5)
 def userInput():
     n = int(input().strip())
     N = input().strip().split(" ")
@@ -62,11 +64,21 @@ def userInputCheck(a, n):
                     ret = "Check"
     return ret
 
+
+############################################################################################
+####### MAIN BLOCK OF CODE #################################################################
+
+b = userInput()
+print(hopGame(b))
+
+
+##Extra test cases
 #a = [0,1,0,0,1,0]
 #b = [0,1,0,0,1,0,0,0,0]
 #c = [0,1,0,0,1,0,0]
 #print(b)
 #print(c)
 
-b = userInput()
-print(hopGame(b))
+# a=[0 1 0 0 1 0]
+#b = [0,1,0,0,1,0,0,0,0]
+#i = 5 c = 3

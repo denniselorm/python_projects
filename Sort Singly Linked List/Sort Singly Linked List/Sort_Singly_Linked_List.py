@@ -2,18 +2,18 @@
 #Task --- Create a singly linked list structure and define a sort function that can sort linked list in ascending order
 
 
-# Singly Linked List Node
+#Singly Linked List Node
 class Node:
     def __init__(self, data=None):
         self.data = data
         self.next = None
 
-
-# Singly Linked List class, with sort function
+#Singly Linked List class, with sort function
 class Ldlist:
     def __init__(self, head=None):
         self.head = head
 
+#Prints elements in linkedlist
     def printList(self):
         link = self.head
         while link != None:
@@ -21,6 +21,7 @@ class Ldlist:
             link = link.next
         print("")
 
+ #Inserts node at the beginning of the linkedlist
     def insertBegin(self, node):
         link = self.head
         if link == None:
@@ -29,6 +30,7 @@ class Ldlist:
             node.next = link
             self.head = node
 
+#Sorts linkedlist in ascending order
     def sortList(self):
         link = self.head
         while link.next != None:
@@ -65,6 +67,7 @@ class Ldlist:
 
 ##############################################################################################################
 ############## Main Code block ###############################################################################
+
 a1  = Node(10)
 l1 = Ldlist(a1)
 a2 = Node(30)
