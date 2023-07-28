@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Inserting a Singly Linked List using the node index", "Inserting a Singly Linked List using the node index\Inserting a Singly Linked List using the node index.pyproj", "{D8689D63-42A2-4C6B-995D-F8BBBB5B3263}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8689D63-42A2-4C6B-995D-F8BBBB5B3263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8689D63-42A2-4C6B-995D-F8BBBB5B3263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {111D57FA-45DF-499E-9801-6EEC20F42AE6}
+	EndGlobalSection
+EndGlobal

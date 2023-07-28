@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Consecutive Multiples based on ratio", "Consecutive Multiples based on ratio\Consecutive Multiples based on ratio.pyproj", "{C53CCF9F-144A-40AD-B6F0-57355B6674A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C53CCF9F-144A-40AD-B6F0-57355B6674A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C53CCF9F-144A-40AD-B6F0-57355B6674A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55A5C01E-3C33-4212-AE40-B1DE6E02096E}
+	EndGlobalSection
+EndGlobal
